@@ -73,13 +73,13 @@ app.get('/powers', (req, res) => {
 // POST route
 app.post('/hero/**', (req, res) => {
   // TODO:  test this what is this line of code doing?
+    // This code simply saves the hero's ID to a variable we can use later
   const heroID = parseInt(req.params[0])
-
-  console.log('HeroID', heroID)
 
   // TODO: find() returns the value of the FIRST element that satisfies the testing condition
   const foundHero = heroes.find(subject => subject.id === heroID)
-
+  
+  // TODO: How do I add the attribute? Sent in the POST from Threat's service
   if (foundHero) {
     for (let attribute in foundHero) {
       if (req.body[attribute]) {
